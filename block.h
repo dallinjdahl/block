@@ -6,13 +6,14 @@
 #include <string.h>
 
 #define BBITS 8
-#define BSIZE (1<<BBITS)
-
 #define CELL 1
 char *bname = "block.img";
+uint32_t bnum = 0;
+
+#define BSIZE (1<<BBITS)
+
 uint16_t block[BSIZE] = {0};
 uint8_t dirty = 0;
-uint32_t bnum = 0;
 int bfd;
 
 void bload(int i) {
